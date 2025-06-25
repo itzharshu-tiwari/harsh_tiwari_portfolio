@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Project
+{% endblock title %}
+
+{% block body %}
+
+<!-- Project Section Start -->
+<section class="container py-5">
+  <h1 class="text-center mb-5 fw-bold">My Projects</h1>
+
+{% for proj in projects %}
+<div class="row align-items-center bg-light rounded shadow p-4 mb-5 proj-dark">
+  <div class="col-md-6 mb-4 mb-md-0">
+    <div class="ratio ratio-16x9">
+      <video controls class="rounded-3 shadow-sm" style="width: 100%; height: auto;">
+        <source src="{{ proj.video.url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h3 class="fw-semibold">{{ proj.title }}</h3>
+    <p class="text-muted dark-txt">{{ proj.description }}</p>
+    <ul class="list-unstyled">
+      {% for tech in proj.tech_stack.splitlines %}
+      <li>✔ {{ tech }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% empty %}
+<p class="text-center">No projects uploaded yet.</p>
+{% endfor %}
+
+</section>
+<!-- Project Section End -->
+
+<script>
+  document.querySelectorAll('video').forEach(video => {
+    video.addEventListener('play', () => {
+      document.querySelectorAll('video').forEach(otherVideo => {
+        if (otherVideo !== video) otherVideo.pause();
+      });
+    });
+  });
+</script>
+
+
+{% endblock body %}

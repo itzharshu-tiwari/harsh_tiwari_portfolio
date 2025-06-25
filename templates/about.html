@@ -1,0 +1,162 @@
+{% extends "base.html" %} {% load static %}
+
+ {% block title %} About {% endblock title %} 
+ {% block body %}
+
+<!-- ABOUT PAGE TEMPLATE -->
+<section class="container py-5">
+  <!-- About Intro -->
+  <section class="text-center mb-5">
+    <h1 class="fw-bold">About Me</h1>
+    <p class="lead text-muted mx-auto about" style="max-width: 700px">
+      This page shares my journey — from where I come from, to where I'm headed.
+      Here's a closer look at my background, education, achievements, and future
+      goals.
+    </p>
+  </section>
+
+  <!-- City Section -->
+  <div
+    class="row align-items-center mb-5 bg-light rounded shadow p-4 about-sec"
+  >
+    <div class="col-md-6 text-center">
+      <img
+        src="/static/images/mp.jpg"
+        class="img-fluid rounded-3 shadow-sm"
+        alt="Bhopal"
+        style="max-height: 300px; object-fit: cover"
+      />
+    </div>
+    <div class="col-md-6">
+      <h2 class="mb-3">Where I Come From</h2>
+      <p class="lead">
+        Bhopal, the City of Lakes, is not just my hometown — it’s my
+        inspiration. Surrounded by serene lakes and rich culture, this city has
+        played a huge role in shaping who I am today. Its calm environment and
+        evolving tech ecosystem motivate me to innovate, learn, and grow.
+      </p>
+      <p>
+        Whether it’s working on late-night projects, walking by the Upper Lake,
+        or attending a local hackathon — Bhopal fuels my creativity and drive
+        every single day.
+      </p>
+    </div>
+  </div>
+
+  <!-- graduation Section -->
+  <div
+    class="row align-items-center mb-5 bg-light rounded shadow p-4 about-sec"
+  >
+    <div class="col-md-6">
+      <h2 class="mb-3">Graduation</h2>
+      <p class="lead">
+        I recently completed my B.Tech in Computer Science Engineering from
+        RGPV, Bhopal (2021–2025). During this time, I gained a solid foundation
+        in programming, web development, and data structures, and worked on
+        projects that sharpened my practical skills. This journey has prepared
+        me to begin my professional career with confidence.
+      </p>
+      <ul class="list-unstyled">
+        <li>
+          <strong>🎓 Graduation:</strong> B.Tech in CSE — Rajiv Gandhi
+          Proudyogiki Vishwavidyalaya, Bhopal (2021–2025)
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-6 text-center">
+      <img
+        src="/static/images/rgpv.jpg"
+        class="img-fluid rounded-3 shadow-sm"
+        alt="Education"
+        style="max-height: 300px; width: 100%; object-fit: cover"
+      />
+    </div>
+  </div>
+
+  <!-- schooling Section -->
+  <div
+    class="row align-items-center mb-5 bg-light rounded shadow p-4 about-sec"
+  >
+    <div class="col-md-6 text-center">
+      <img
+        src="/static/images/mpbse.png"
+        class="img-fluid rounded-3 shadow-sm"
+        alt="Education"
+        style="max-height: 300px; width: 80%; object-fit: cover"
+      />
+    </div>
+    <div class="col-md-6">
+      <h2 class="mb-3">Schooling</h2>
+      <p class="lead">
+        I completed my schooling from MPBSE, where I gained a strong academic
+        foundation and developed discipline, curiosity, and problem-solving
+        skills. My interest in science and technology began during these years,
+        and I actively participated in various school-level competitions and
+        activities that boosted my confidence and communication.
+      </p>
+      <ul class="list-unstyled">
+        <li>
+          <strong>🏫 Class 12th:</strong> Madhya Pradesh Board of Secondary
+          Education (2019–2021)
+        </li>
+        <li>
+          <strong>📘 Class 10th:</strong> Madhya Pradesh Board of Secondary
+          Education (2017–2019)
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Certificates Section -->
+  <h2 class="mb-4">Achievements & Certifications</h2>
+<div class="row g-4">
+  {% for cert in certificates %}
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ cert.image.url }}" class="card-img-top" alt="{{ cert.title }}">
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ cert.title }}</h5>
+          <p class="card-text">{{ cert.issuer }} • Completed {{ cert.completed_date }}</p>
+          <button class="btn btn-primary"
+                  onclick="showImage('{{ cert.image.url }}')"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal">
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p class="text-center">No certifications added yet.</p>
+  {% endfor %}
+</div>
+
+
+  <!-- Modal (Outside the card section, bottom of page) -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center p-0">
+          <img id="modalImage" src="" class="img-fluid" alt="Full View" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline .row {
+    border-left: 3px solid #0d6efd;
+    padding-left: 1rem;
+    margin-left: 0.5rem;
+  }
+</style>
+
+{% comment %}
+<script>
+  function showImage(src) {
+    document.getElementById("modalImage").src = src;
+  }
+</script>
+{% endcomment %} 
+{% endblock body %}

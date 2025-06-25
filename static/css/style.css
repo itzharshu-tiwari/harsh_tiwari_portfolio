@@ -1,0 +1,236 @@
+/* BASE CSS HERE */
+
+.nav-link {
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+.footer-link {
+    color: #212529;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    text-decoration: none;
+}
+
+.footer-link.linkedin:hover {
+    color: #0A66C2;
+}
+
+.footer-link.github:hover {
+    color: #333;
+}
+
+.footer-link.gmail:hover {
+    color: #D93025;
+}
+
+.footer-link.discord:hover {
+    color: #5865F2;
+}
+
+.footer-link.contact:hover {
+    color: #198754;
+}
+
+
+/* dark mode */
+body.light-mode {
+    background-color: #aed1ec;
+    color: #212529;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .hero-text p {
+    color: #ffffff;
+}
+
+.dark-mode .hero-text h1 {
+    color: #ffffff;
+}
+
+.dark-mode .mycard {
+    color: #000000;
+}
+
+.dark-mode .about {
+    color: white !important;
+}
+
+.dark-mode .about-sec {
+    color: white !important;
+    background: #1a1a1a !important;
+}
+
+.dark-mode .navbar {
+    background-color: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+.dark-mode footer {
+    color: white;
+    background-color: black !important;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-mode .btn-outline-dark {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.dark-mode a {
+    color: #bbdefb;
+}
+
+.dark-mode .proj-dark {
+    background-color: rgb(37, 37, 37) !important;
+}
+
+.dark-mode .dark-txt {
+    color: white !important;
+}
+
+.dark-mode .btn-outline-dark:hover {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+
+/* HOME CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #b0d6ff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    color: #1f1f1f;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 10%;
+    backdrop-filter: brightness(95%);
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #222;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin: 20px 0;
+    color: #333;
+}
+
+.features {
+    margin-top: 20px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.features li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.features li::before {
+    content: "✔";
+    color: #007bff;
+    position: absolute;
+    left: 0;
+}
+
+.hero-buttons {
+    margin-top: 25px;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.hero-buttons a:hover {
+    background-color: #0056b3;
+}
+
+.hero-img {
+    max-width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.hero-img img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+}
+
+.mycard {
+    font-size: 30px;
+    margin-top: 10px;
+    padding: 0;
+    background-color: white;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+    transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text,
+    .hero-img {
+        max-width: 100%;
+    }
+
+    .hero-img {
+        margin-top: 30px;
+    }
+}

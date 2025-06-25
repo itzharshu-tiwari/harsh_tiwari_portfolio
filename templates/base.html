@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <title>{% block title %} {% endblock title %}|Harsh Tiwari Portfolio</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="{% url 'index' %}"
+          >Er. Harsh Tiwari</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+             <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}">
+                <i class="bi bi-house-door-fill me-1"></i> Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">
+                <i class="bi bi-person-fill me-1"></i> About
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'project' %}">
+                <i class="bi bi-laptop-fill me-1"></i> Projects
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">
+                <i class="bi bi-envelope-fill me-1"></i> Contact
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'resume_list' %}">
+                <i class="bi bi-file-earmark-person-fill"></i> Resume
+              </a>
+            </li>
+          </ul>
+          <button id="theme-toggle" class="btn btn-outline-dark ms-2">
+            <i class="bi bi-moon-fill"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    {% block body %}
+     
+    {% endblock body %}
+    <footer class="bg-light text-center text-lg-start mt-5 shadow-sm">
+      <div class="container p-4">
+        <div class="row">
+          <!-- CONNECT SECTION -->
+              <div class="col-12 col-md-6 mb-4 text-md-start text-center">
+                <h5 class="text-uppercase">Connect</h5>
+                <ul class="list-unstyled mt-3">
+                  {% for connect in connect_links %}
+                    <li class="mb-2">
+                      {% if connect.email %}
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{ connect.email }}" target="_blank"
+                          class="footer-link {{ connect.platform|lower }} d-inline-flex w-auto align-items-center justify-content-md-start justify-content-center gap-2">
+                          <i class="{{ connect.icon_class }} fs-5"></i>
+                          <span>{{ connect.display_text }}</span>
+                        </a>
+                      {% elif connect.phone_number %}
+                        <a href="tel:{{ connect.phone_number }}" class="footer-link {{ connect.platform|lower }} d-inline-flex w-auto align-items-center justify-content-md-start justify-content-center gap-2">
+                          <i class="{{ connect.icon_class }} fs-5"></i>
+                          <span>{{ connect.display_text }}</span>
+                        </a>
+                      {% elif connect.url %}
+                        <a href="{{ connect.url }}" target="_blank"
+                          class="footer-link {{ connect.platform|lower }} d-inline-flex w-auto align-items-center justify-content-md-start justify-content-center gap-2">
+                          <i class="{{ connect.icon_class }} fs-5"></i>
+                          <span>{{ connect.display_text }}</span>
+                        </a>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+
+        
+
+
+      <!-- Services Section - Right -->
+      <div class="col-12 col-md-6 text-md-end text-center">
+        <h5 class="text-uppercase">Services</h5>
+          <ul class="list-unstyled mt-3">
+          {% for service in services %}
+            <li>{{ service.icon }} {{ service.title }}</li>
+          {% empty %}
+            <li>No services added yet.</li>
+          {% endfor %}
+        </ul>
+        <p class="fst-italic mt-2">
+          Interested in any service?
+          <a href="{% url 'contact' %}" class="text-decoration-none fw-semibold">Contact me professionally »</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quote & Bottom Section -->
+  <div class="bg-dark text-white text-center py-3">
+    <div class="fst-italic text-secondary mb-2">
+      "First, solve the problem. Then, write the code." – John Johnson
+    </div>
+    <div class="fw-light">© 2025 Harsh. All rights reserved.</div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <a
+    href="#top"
+    class="position-fixed bottom-0 end-0 m-4 btn btn-primary rounded-circle"
+    style="z-index: 999"
+  >
+    ↑
+  </a>
+</footer>
+
+
+    <!-- Place before </body> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <a
+      href="/admin/"
+      target="_blank"
+      style="position: fixed; bottom: 0; right: 10px"
+      class="btn btn-dark"
+      >Admin</a
+    >
+  </body>
+</html>

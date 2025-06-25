@@ -1,0 +1,51 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %} Home {% endblock title %} 
+
+{% block body %}
+
+{% if hero %}
+<section class="hero">
+  <div class="hero-text">
+    <h1>Hi, I'm <span style="color: #007bff">{{ hero.name }}</span></h1>
+    <p>{{ hero.intro }}</p>
+
+    <div class="hero-buttons">
+      {% if hero.show_resume_button %}
+        <a href="/resume">Resume</a>
+      {% endif %}
+      {% if hero.show_contact_button %}
+        <a href="/contact">Contact Me</a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="{{ hero.profile_image.url }}" alt="{{ hero.name }} Photo" />
+  </div>
+</section>
+{% endif %}
+
+
+<!-- Skills Section Start -->
+
+<h2 class="text-center mycard">My Skills</h2>
+<section class="container my-5 card-col">
+  <div class="row g-4">
+    {% for skill in skills %}
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0 h-100">
+          <div class="card-body text-center">
+            <img src="{{ skill.image.url }}" alt="{{ skill.name }}" height="100px" />
+            <h5 class="card-title">{{ skill.name }}</h5>
+            <p class="card-text">{{ skill.description }}</p>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-center">No skills available yet.</p>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock body %}
