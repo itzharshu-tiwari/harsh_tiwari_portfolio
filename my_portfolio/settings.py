@@ -26,7 +26,7 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 
 INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
-    'admin_interface',
+    # 'admin_interface',
     'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
