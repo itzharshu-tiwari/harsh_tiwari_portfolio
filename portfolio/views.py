@@ -1,28 +1,17 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import ContactForm
-from .models import Resume, HeroSection, Skill
-from .models import Certificate
-from .models import Project
 
-# Home Page (Hero + Skills)
+
 def index(request):
-    hero = HeroSection.objects.first()
-    skills = Skill.objects.all()
-    return render(request, 'home.html', {
-        'hero': hero,
-        'skills': skills
-    })
+    return render(request, 'home.html')
 
-# About Page
 def about(request):
-    certificates = Certificate.objects.all()
-    return render(request, 'about.html', {'certificates': certificates})
+    return render(request, 'about.html')
 
-# Projects Page
+
 def project(request):
-    projects = Project.objects.all()
-    return render(request, 'project.html', {'projects': projects})
+    return render(request, 'project.html')
 
 # Contact Page with Form
 def contact_view(request):
@@ -36,9 +25,5 @@ def contact_view(request):
         form = ContactForm()
     return render(request, 'contact.html', {'form': form})
 
-# Resume Page
 def resume_list(request):
-    resumes = Resume.objects.all()
-    return render(request, 'resume.html', {'resumes': resumes})
-
- 
+    return render(request, 'resume.html')

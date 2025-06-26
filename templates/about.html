@@ -1,7 +1,5 @@
-{% extends "base.html" %} {% load static %}
-
- {% block title %} About {% endblock title %} 
- {% block body %}
+{% extends "base.html" %} {% load static %} 
+{% block title %} About {% endblock title %} {% block body %}
 
 <!-- ABOUT PAGE TEMPLATE -->
 <section class="container py-5">
@@ -109,28 +107,296 @@
 
   <!-- Certificates Section -->
   <h2 class="mb-4">Achievements & Certifications</h2>
-<div class="row g-4">
-  {% for cert in certificates %}
+  <div class="row g-4">
+    <!-- Certificate Card Example - Repeat for each certificate -->
+     
     <div class="col-md-4">
       <div class="card h-100 shadow-sm">
-        <img src="{{ cert.image.url }}" class="card-img-top" alt="{{ cert.title }}">
+        <img
+          src="{% static 'cert/python cert.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
         <div class="card-body text-center">
-          <h5 class="card-title">{{ cert.title }}</h5>
-          <p class="card-text">{{ cert.issuer }} • Completed {{ cert.completed_date }}</p>
-          <button class="btn btn-primary"
-                  onclick="showImage('{{ cert.image.url }}')"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal">
+          <h5 class="card-title">Python </h5>
+          <p class="card-text">OPENEDG • Completed JAN 2023</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/python cert.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
             View
           </button>
         </div>
       </div>
     </div>
-  {% empty %}
-    <p class="text-center">No certifications added yet.</p>
-  {% endfor %}
-</div>
 
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/amcat.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">Amcat </h5>
+          <p class="card-text">AMCAT • Completed OCT 2023</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/amcat.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/iit.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">5G IOT</h5>
+          <p class="card-text">FITT • Completed MAR 2023</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/iit.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/java.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">Java </h5>
+          <p class="card-text">NPTEL • Completed OCT 2023</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/java.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/nipam.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">NIPAM </h5>
+          <p class="card-text">NIPAM • Completed DEC 2022</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/nipam.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/energy.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">Energy Swaraj Foundation </h5>
+          <p class="card-text">Energy Swaraj Foundation • Completed MAR 2023</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/energy.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/begin lvl.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">Beginner Level Typing</h5>
+          <p class="card-text">Typing.com • Completed DEC 2024</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/begin lvl.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/begin lvl.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">Intermidate Level Typing</h5>
+          <p class="card-text">Typing.com • Completed JAN 2025</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/begin lvl.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/web dev.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">Web Development</h5>
+          <p class="card-text">The Website Maker • Completed DEC 2023</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/web dev.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/css boot.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">Css Bootcamp</h5>
+          <p class="card-text">Lets Upgrade • Completed APR 2024</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/css boot.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/mongo.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">MongoDB Bootcamp</h5>
+          <p class="card-text">Lets Upgrade • Completed SEP 2024</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/mongo.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/react coding.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">React</h5>
+          <p class="card-text">Coding Ninjas • Completed NOV 2024</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/react coding.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img
+          src="{% static 'cert/wipro.png' %}"
+          class="card-img-top"
+          alt="Python Certificate"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title">Java Full Stack</h5>
+          <p class="card-text">Wipro • Completed OCT 2024</p>
+          <button
+            class="btn btn-primary"
+            onclick="showImage('{% static 'cert/wipro.png' %}')"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            View
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
   <!-- Modal (Outside the card section, bottom of page) -->
   <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
@@ -152,11 +418,9 @@
   }
 </style>
 
-{% comment %}
 <script>
   function showImage(src) {
     document.getElementById("modalImage").src = src;
   }
 </script>
-{% endcomment %} 
 {% endblock body %}

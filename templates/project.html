@@ -11,32 +11,156 @@ Project
 <section class="container py-5">
   <h1 class="text-center mb-5 fw-bold">My Projects</h1>
 
-{% for proj in projects %}
-<div class="row align-items-center bg-light rounded shadow p-4 mb-5 proj-dark">
-  <div class="col-md-6 mb-4 mb-md-0">
-    <div class="ratio ratio-16x9">
-      <video controls class="rounded-3 shadow-sm" style="width: 100%; height: auto;">
-        <source src="{{ proj.video.url }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  <!-- Project 1 -->
+  <div class="row align-items-center bg-light rounded shadow p-4 mb-5 proj-dark">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <div class="ratio ratio-16x9">
+        <video controls class="rounded-3 shadow-sm" style="width: 100%; height: auto;">
+          <source src="{% static 'video/face.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="fw-semibold">Face Recognition Attendance System</h3>
+      <p class="text-muted dark-txt">
+        An AI-powered attendance system that uses real-time face recognition to identify individuals and automatically mark their attendance with date and time. The system captures face samples, trains the model, stores data securely, and provides a user-friendly interface for managing records. Ideal for educational institutions and workplaces.
+      </p>
+      <ul class="list-unstyled">
+        <li>✔ Programming Language – Python</li>
+        <li>✔Computer Vision – OpenCV</li>
+        <li>✔GUI – Tkinter</li>
+        <li>✔Database – MySQL</li>
+        <li>✔Machine Learning – LBPH Face Recognizer</li>
+      </ul>
     </div>
   </div>
-  <div class="col-md-6">
-    <h3 class="fw-semibold">{{ proj.title }}</h3>
-    <p class="text-muted dark-txt">{{ proj.description }}</p>
-    <ul class="list-unstyled">
-      {% for tech in proj.tech_stack.splitlines %}
-      <li>✔ {{ tech }}</li>
-      {% endfor %}
-    </ul>
+
+  <!-- Project 2 -->
+  <div class="row align-items-center bg-light rounded shadow p-4 mb-5 proj-dark">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <div class="ratio ratio-16x9">
+        <video controls class="rounded-3 shadow-sm" style="width: 100%; height: auto;">
+          <source src="{% static 'video/clone.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="fw-semibold">UltraEdit Website Clone</h3>
+      <p class="text-muted dark-txt">
+        A fully responsive and visually accurate clone of the official UltraEdit website, developed using HTML and CSS. This project replicates the layout, design components, and responsive behavior of the original website across different screen sizes. It demonstrates a strong understanding of modern web design principles including semantic HTML, clean CSS structuring, and mobile-first responsiveness. The project includes key sections like a hero banner, navigation menu, pricing layout, feature cards, and a detailed footer.
+      </p>
+      <ul class="list-unstyled">
+        <li>✔ Markup Language: HTML5</li>
+        <li>✔ Styling: CSS3</li>
+        <li>✔ Layout Techniques: Flexbox, Grid</li>
+        <li>✔ UI Components: Navigation Bar, Hero Section, Pricing Cards, Feature Highlights, Footer</li>
+      </ul>
+    </div>
   </div>
-</div>
-{% empty %}
-<p class="text-center">No projects uploaded yet.</p>
-{% endfor %}
+
+  <!-- Project 3 -->
+  <div class="row align-items-center bg-light rounded shadow p-4 mb-5 proj-dark">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <div class="ratio ratio-16x9">
+        <video controls class="rounded-3 shadow-sm" style="width: 100%; height: auto;">
+          <source src="{% static 'video/game.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="fw-semibold">Stone Paper Scissors Game</h3>
+      <p class="text-muted dark-txt">
+        A browser-based Stone Paper Scissors game built using HTML, CSS, and JavaScript. The game allows users to play against the computer with real-time interaction and score tracking. It features a clean and responsive user interface, smooth animations, and logic to randomly generate computer choices and determine the game outcome. This project demonstrates DOM manipulation, event handling, and basic game logic implementation.
+      </p>
+      <ul class="list-unstyled">
+        <li>✔ Markup Language: HTML5</li>
+        <li>✔ Styling: CSS3</li>
+        <li>✔ Programming Language: JavaScript</li>
+        <li>✔ Key Concepts: DOM Manipulation, Event Handling, Game Logic</li>
+        <li>✔ UI Features: Responsive Layout, Interactive Buttons, Scoreboard, Result Display</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Project 4 -->
+  <div class="row align-items-center bg-light rounded shadow p-4 mb-5 proj-dark">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <div class="ratio ratio-16x9">
+        <video controls class="rounded-3 shadow-sm" style="width: 100%; height: auto;">
+          <source src="{% static 'video/travel.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="fw-semibold">Travel Website Layout</h3>
+      <p class="text-muted dark-txt">
+       A visually appealing and fully responsive travel website layout designed using HTML and CSS. The project includes modern web design elements such as hero sections, featured destinations, service highlights, and call-to-action areas. It demonstrates strong command over layout techniques, visual hierarchy, and responsive design, making it ideal for showcasing frontend development and UI/UX design skills.
+      </p>
+      <ul class="list-unstyled">
+        <li>✔ Markup Language: HTML5</li>
+        <li>✔ Styling: CSS3</li>
+        <li>✔ Layout Techniques: Flexbox, CSS Grid</li>
+        <li>✔ UI Components: Hero Section, Destination Cards, Services Section, Testimonials, Footer</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Project 5 -->
+  <div class="row align-items-center bg-light rounded shadow p-4 mb-5 proj-dark">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <div class="ratio ratio-16x9">
+        <video controls class="rounded-3 shadow-sm" style="width: 100%; height: auto;">
+          <source src="{% static 'video/form.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="fw-semibold"> Form</h3>
+      <p class="text-muted dark-txt">
+       A clean and responsive user authentication interface that includes Login, Signup, and Forgot Password pages, designed using HTML and CSS. The project focuses on modern UI/UX principles, featuring structured form layouts, intuitive field arrangements, and responsive behavior across devices. It demonstrates strong frontend skills in designing real-world user interfaces for web applications.
+      </p>
+      <ul class="list-unstyled">
+        <li>✔ Markup Language: HTML5</li>
+        <li>✔ Styling: CSS3</li>
+        <li>✔ Design Approach: Responsive Web Design</li>
+        <li>✔ Layout Techniques: Flexbox, CSS Transitions</li>
+        <li>✔ UI Components: Login Form, Signup Form, Forgot Password Page, Input Validation UI, Buttons, Alerts</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Project 6 -->
+  <div class="row align-items-center bg-light rounded shadow p-4 mb-5 proj-dark">
+    <div class="col-md-6 mb-4 mb-md-0">
+      <div class="ratio ratio-16x9">
+        <video controls class="rounded-3 shadow-sm" style="width: 100%; height: auto;">
+          <source src="{% static 'video/ball.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="fw-semibold"> Bouncing Ball Animation</h3>
+      <p class="text-muted dark-txt">
+       A smooth and visually engaging bouncing ball animation created purely with CSS. This project showcases the use of keyframe animations, timing functions, and transform properties to simulate realistic bounce effects. It reflects a solid understanding of CSS animation techniques and creative frontend design without relying on JavaScript. Ideal for demonstrating visual effects and motion design skills in web development.
+      </p>
+      <ul class="list-unstyled">
+        <li>✔ Markup Language: HTML5</li>
+        <li>✔ Styling: CSS3</li>
+        <li>✔ Animation Technique: CSS Keyframes</li>
+        <li>✔ Core Concepts: Transform, TranslateY, Timing Functions, Infinite Loop Animation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Add more projects in same format -->
 
 </section>
-<!-- Project Section End -->
 
 <script>
   document.querySelectorAll('video').forEach(video => {
@@ -47,6 +171,5 @@ Project
     });
   });
 </script>
-
 
 {% endblock body %}

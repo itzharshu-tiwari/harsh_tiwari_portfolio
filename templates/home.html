@@ -1,50 +1,128 @@
-{% extends "base.html" %} 
-{% load static %} 
-{% block title %} Home {% endblock title %} 
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} Home {% endblock title %}
 
 {% block body %}
 
-{% if hero %}
+<!-- 🔹 Hero Section -->
 <section class="hero">
   <div class="hero-text">
-    <h1>Hi, I'm <span style="color: #007bff">{{ hero.name }}</span></h1>
-    <p>{{ hero.intro }}</p>
+    <h1>Hi, I'm <span style="color: #007bff">Harsh Tiwari</span></h1>
+    <p>I design and build clean, efficient, and responsive web experiences. With
+      a focus on detail and performance, I enjoy turning ideas into functional
+      interfaces. Currently working with Django to develop full-stack
+      applications. I value clean code, thoughtful design, and continuous
+      learning. Let’s build something impactful.</p>
 
     <div class="hero-buttons">
-      {% if hero.show_resume_button %}
-        <a href="/resume">Resume</a>
-      {% endif %}
-      {% if hero.show_contact_button %}
-        <a href="/contact">Contact Me</a>
-      {% endif %}
+      <a href="/resume">Resume</a>
+      <a href="/contact">Contact Me</a>
     </div>
   </div>
 
   <div class="hero-img">
-    <img src="{{ hero.profile_image.url }}" alt="{{ hero.name }} Photo" />
+    <img src="{% static 'images/dev-img.png' %}" alt="Harsh Tiwari Photo" />
   </div>
 </section>
-{% endif %}
 
-
-<!-- Skills Section Start -->
-
+<!-- 🔹 Skills Section -->
 <h2 class="text-center mycard">My Skills</h2>
 <section class="container my-5 card-col">
   <div class="row g-4">
-    {% for skill in skills %}
-      <div class="col-md-4">
-        <div class="card shadow-sm border-0 h-100">
-          <div class="card-body text-center">
-            <img src="{{ skill.image.url }}" alt="{{ skill.name }}" height="100px" />
-            <h5 class="card-title">{{ skill.name }}</h5>
-            <p class="card-text">{{ skill.description }}</p>
-          </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body text-center">
+          <img src="{% static 'skills/python.png' %}" alt="Python" height="100px" />
+          <h5 class="card-title">Python</h5>
+          <p class="card-text">A powerful and beginner-friendly language I use for building applications, automation, and data handling.</p>
         </div>
       </div>
-    {% empty %}
-      <p class="text-center">No skills available yet.</p>
-    {% endfor %}
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body text-center">
+          <img src="{% static 'skills/django.png' %}" alt="Django" height="100px" />
+          <h5 class="card-title">Django</h5>
+          <p class="card-text">A high-level Python web framework I use to build secure, scalable, and dynamic web applications.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body text-center">
+          <img src="{% static 'skills/sql.png' %}" alt="JavaScript" height="100px" />
+          <h5 class="card-title">SQL</h5>
+          <p class="card-text">Used for managing and querying databases to efficiently handle structured data.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body text-center">
+          <img src="{% static 'skills/js.png' %}" alt="JavaScript" height="100px" />
+          <h5 class="card-title">JavaScript</h5>
+          <p class="card-text">Enables interactive and dynamic features on websites, enhancing user experience on the frontend.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body text-center">
+          <img src="{% static 'skills/html.png' %}" alt="JavaScript" height="100px" />
+          <h5 class="card-title">HTML</h5>
+          <p class="card-text">The foundation of web pages, used to structure content for the web.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body text-center">
+          <img src="{% static 'skills/css.png' %}" alt="JavaScript" height="100px" />
+          <h5 class="card-title">CSS</h5>
+          <p class="card-text">Used to style and design web pages, making them visually appealing and responsive.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body text-center">
+          <img src="{% static 'skills/git.png' %}" alt="JavaScript" height="100px" />
+          <h5 class="card-title">GIT</h5>
+          <p class="card-text">A version control system I use to track changes, collaborate, and manage code efficiently.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body text-center">
+          <img src="{% static 'skills/github.jpg' %}" alt="JavaScript" height="100px" />
+          <h5 class="card-title">GitHub</h5>
+          <p class="card-text">A platform I use to host, share, and collaborate on code using Git version control.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0 h-100">
+        <div class="card-body text-center">
+          <img src="{% static 'skills/postgresql.png' %}" alt="JavaScript" height="100px" />
+          <h5 class="card-title">PostgreSQL</h5>
+          <p class="card-text">An advanced, open-source relational database I use for building reliable and scalable applications.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aur bhi skills add kar sakte ho -->
+
   </div>
 </section>
 
